@@ -42,11 +42,11 @@ $ brew install websharks-cli-tools
 
 ### Contributing (How-To)
 
-```bash
-$ git clone --recurse-submodules https://github.com/websharks/cli-tools
-$ git checkout 000000-dev
-```
-
+- Clone the `cli-tools` repo locally.
+  ```bash
+  $ git clone --recurse-submodules https://github.com/websharks/cli-tools
+  $ git checkout 000000-dev
+  ```
 - Add a new `scripts/[file.(php|bash|etc)]`.
 
 - If your script has dependencies, try to use a submodule.
