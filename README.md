@@ -4,6 +4,15 @@ A collection of scripts that power command-line tools used by WebSharks, Inc.
 
 ---
 
+### Installation
+
+```bash
+$ brew tap websharks/formulas
+$ brew install websharks-cli-tools
+```
+
+---
+
 ### Depends On `~/.websharks.json`
 
 ```json
