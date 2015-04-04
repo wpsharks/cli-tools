@@ -28,14 +28,18 @@
 	},
 
 	"require"          : {
-		"websharks/core": "dev-master"
+		"websharks/core": "dev-000000-dev"
 	},
 	"minimum-stability": "dev",
 	"prefer-stable"    : true,
 
 	"autoload"         : {
 		"psr-4": {
-			"WebSharks\\CliTools\\": "includes/classes/"
+			"WebSharks\\CliTools\\Classes\\": "includes/classes/"
 		}
+	},
+
+	"config"           : {
+		"vendor-dir": "includes/vendor"
 	}
 }

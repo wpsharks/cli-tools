@@ -2,18 +2,18 @@
 /**
  * Hello Class
  *
- * @since 15xxxx First documented version.
+ * @since 15xxxx Initial release.
  * @copyright WebSharks, Inc. <http://www.websharks-inc.com>
  * @license GNU General Public License, version 3
  */
-namespace WebSharks\CliTools
+namespace WebSharks\CliTools\Classes
 {
-	use WebSharks\Core;
-
 	/**
 	 * Hello Class
+	 *
+	 * @since 15xxxx Initial release.
 	 */
-	class Hello extends Core\AbsBase
+	class Hello extends \WebSharks\Core\Classes\AbsBase
 	{
 		/**
 		 * Class constructor.

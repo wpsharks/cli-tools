@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "3e422945af882bebe1ba5b455591c579",
+    "hash": "1126b2931daff63e859abed8c2266f2b",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
@@ -475,16 +475,16 @@
         },
         {
             "name": "websharks/core",
-            "version": "dev-master",
+            "version": "dev-000000-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/websharks/core.git",
-                "reference": "59f6f9079d7f1ed792cf82a6bb0ccabdfbc39abc"
+                "reference": "c17f53a58e10cc58a1d2ae4b5608a5a4a5bf5618"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/websharks/core/zipball/59f6f9079d7f1ed792cf82a6bb0ccabdfbc39abc",
-                "reference": "59f6f9079d7f1ed792cf82a6bb0ccabdfbc39abc",
+                "url": "https://api.github.com/repos/websharks/core/zipball/c17f53a58e10cc58a1d2ae4b5608a5a4a5bf5618",
+                "reference": "c17f53a58e10cc58a1d2ae4b5608a5a4a5bf5618",
                 "shasum": ""
             },
             "require": {
@@ -502,7 +502,8 @@
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "WebSharks\\Core\\": "includes/classes/"
+                    "WebSharks\\Core\\Classes\\": "includes/classes/",
+                    "WebSharks\\Core\\Traits\\": "includes/traits/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -531,7 +532,7 @@
             "keywords": [
                 "websharks"
             ],
-            "time": "2015-04-04 08:59:33"
+            "time": "2015-04-04 11:05:27"
         }
     ],
     "packages-dev": [],
