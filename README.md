@@ -45,22 +45,18 @@ $ brew install websharks-cli-tools
 #### Clone the `cli-tools` repo locally.
 
 ```bash
-$ git clone --recurse-submodules https://github.com/websharks/cli-tools
+$ git clone https://github.com/websharks/cli-tools
 $ git checkout 000000-dev
 ```
 
 #### Add a new `scripts/[file.(php|bash|etc)]`
 
-##### If your script has dependencies, try to use a submodule.
-
-```bash
-$ git submodule add [URL to Git repo] submodules/[package name]
-```
+##### If your script has dependencies, add them to `composer.json`.
 
 _Or, you can use a Homebrew package as a dependency; if that is easier._
 
 _If you need configuration data, please obtain those values from `~/.websharks.json`. Your script should trigger an exception if configuration options are missing; i.e., you should alert the user instead of trying to fail gracefully._
-  
+
 #### Submit a Pull Request on GitHub
 
 Submit a Pull Request so that your script can get merged into this repo. Raam/Jason will review.
