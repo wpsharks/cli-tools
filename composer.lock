@@ -4,20 +4,20 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "1126b2931daff63e859abed8c2266f2b",
+    "hash": "005805f18b1bc9d7224a5c4e2fac6609",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
-            "version": "2.7.26",
+            "version": "2.8.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "340ba93eef5fdef99b8f1134987976b17d81624c"
+                "reference": "4237e97388d2906d2aa88f727736968fc2df9cb6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/340ba93eef5fdef99b8f1134987976b17d81624c",
-                "reference": "340ba93eef5fdef99b8f1134987976b17d81624c",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/4237e97388d2906d2aa88f727736968fc2df9cb6",
+                "reference": "4237e97388d2906d2aa88f727736968fc2df9cb6",
                 "shasum": ""
             },
             "require": {
@@ -71,7 +71,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2015-04-02 21:59:44"
+            "time": "2015-04-23 20:14:25"
         },
         {
             "name": "erusev/parsedown",
@@ -479,12 +479,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/websharks/core.git",
-                "reference": "c17f53a58e10cc58a1d2ae4b5608a5a4a5bf5618"
+                "reference": "5cac84f3e06f9f31988b7c805d4ec793465bcae3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/websharks/core/zipball/c17f53a58e10cc58a1d2ae4b5608a5a4a5bf5618",
-                "reference": "c17f53a58e10cc58a1d2ae4b5608a5a4a5bf5618",
+                "url": "https://api.github.com/repos/websharks/core/zipball/5cac84f3e06f9f31988b7c805d4ec793465bcae3",
+                "reference": "5cac84f3e06f9f31988b7c805d4ec793465bcae3",
                 "shasum": ""
             },
             "require": {
@@ -502,8 +502,8 @@
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "WebSharks\\Core\\Classes\\": "includes/classes/",
-                    "WebSharks\\Core\\Traits\\": "includes/traits/"
+                    "WebSharks\\Core\\Classes\\": "src/includes/classes",
+                    "WebSharks\\Core\\Traits\\": "src/includes/traits"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -532,7 +532,7 @@
             "keywords": [
                 "websharks"
             ],
-            "time": "2015-04-04 11:05:27"
+            "time": "2015-04-26 06:59:27"
         }
     ],
     "packages-dev": [],
