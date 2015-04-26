@@ -1,4 +1,4 @@
-## Command line tools for WebSharks™
+## Command Line Tools for WebSharks™
 
 A collection of scripts that power command-line tools used by WebSharks, Inc.
 
