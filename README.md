@@ -65,7 +65,7 @@ $ git checkout 000000-dev
 
 ```bash
 $ cd cli-tools
-$ phing
+$ phing # This runs Composer too, automatically.
 ```
 
 #### Add a new `scripts/[file.(php|bash|etc)]`
