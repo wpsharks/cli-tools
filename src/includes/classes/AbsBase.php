@@ -6,12 +6,27 @@ use WebSharks\Core\CliTools\Classes;
 use WebSharks\Core\CliTools\Traits;
 
 /**
- * Hello Class.
+ * Base Abstraction.
  *
  * @since 15xxxx Initial release.
  */
-class Hello extends \WebSharks\Core\CliTools\Classes\AbsBase
+abstract class AbsBase extends Classes\AbsBase
 {
+    /*
+     * Properties
+     */
+
+    /**
+     * @type array Instance cache.
+     *
+     * @since 15xxxx Initial release.
+     */
+    protected $tool;
+
+    /*
+     * Constructor
+     */
+
     /**
      * Class constructor.
      *
