@@ -75,16 +75,16 @@
         },
         {
             "name": "erusev/parsedown",
-            "version": "1.5.2",
+            "version": "1.5.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/erusev/parsedown.git",
-                "reference": "468d1e3da8bde049debee7f484a4f9c4b26b41ba"
+                "reference": "b9e5228e92e5f5c17d7774cfb2de8e5e8362de1a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/erusev/parsedown/zipball/468d1e3da8bde049debee7f484a4f9c4b26b41ba",
-                "reference": "468d1e3da8bde049debee7f484a4f9c4b26b41ba",
+                "url": "https://api.github.com/repos/erusev/parsedown/zipball/b9e5228e92e5f5c17d7774cfb2de8e5e8362de1a",
+                "reference": "b9e5228e92e5f5c17d7774cfb2de8e5e8362de1a",
                 "shasum": ""
             },
             "type": "library",
@@ -110,7 +110,7 @@
                 "markdown",
                 "parser"
             ],
-            "time": "2015-03-18 18:44:57"
+            "time": "2015-04-29 20:22:24"
         },
         {
             "name": "erusev/parsedown-extra",
@@ -479,12 +479,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/websharks/core.git",
-                "reference": "5cac84f3e06f9f31988b7c805d4ec793465bcae3"
+                "reference": "ceaf55c60b0b02d42369c9dd682b23d12383de0d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/websharks/core/zipball/5cac84f3e06f9f31988b7c805d4ec793465bcae3",
-                "reference": "5cac84f3e06f9f31988b7c805d4ec793465bcae3",
+                "url": "https://api.github.com/repos/websharks/core/zipball/ceaf55c60b0b02d42369c9dd682b23d12383de0d",
+                "reference": "ceaf55c60b0b02d42369c9dd682b23d12383de0d",
                 "shasum": ""
             },
             "require": {
@@ -496,13 +496,14 @@
                 "ext-openssl": "*",
                 "lusitanian/oauth": "0.*",
                 "michelf/php-markdown": "1.*",
-                "php": ">=5.4",
+                "php": ">=5.4.7",
                 "symfony/yaml": "2.*"
             },
             "type": "library",
             "autoload": {
                 "psr-4": {
                     "WebSharks\\Core\\Classes\\": "src/includes/classes",
+                    "WebSharks\\Core\\Interfaces\\": "src/includes/interfaces",
                     "WebSharks\\Core\\Traits\\": "src/includes/traits"
                 }
             },
@@ -532,7 +533,7 @@
             "keywords": [
                 "websharks"
             ],
-            "time": "2015-04-26 06:59:27"
+            "time": "2015-05-02 13:28:20"
         }
     ],
     "packages-dev": [],

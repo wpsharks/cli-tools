@@ -1,9 +1,7 @@
 <?php
 namespace WebSharks\CliTools;
 
-use WebSharks\Core\CliTools\Interfaces;
 use WebSharks\Core\CliTools\Classes;
-use WebSharks\Core\CliTools\Traits;
 
 /**
  * Base Abstraction.
@@ -12,28 +10,22 @@ use WebSharks\Core\CliTools\Traits;
  */
 abstract class AbsBase extends Classes\AbsBase
 {
-    /*
-     * Properties
-     */
-
     /**
-     * @type array Instance cache.
+     * @type Ws Instance.
      *
      * @since 15xxxx Initial release.
      */
-    protected $tool;
-
-    /*
-     * Constructor
-     */
+    protected $ws;
 
     /**
-     * Class constructor.
+     * Constructor.
      *
      * @since 15xxxx Initial release.
      */
     public function __construct()
     {
         parent::__construct();
+
+        $this->ws = &$GLOBALS[GLOBAL_NS];
     }
 }
