@@ -365,6 +365,32 @@
             "time": "2015-03-01 12:03:08"
         },
         {
+            "name": "ryakad/pandoc-php",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ryakad/pandoc-php.git",
+                "reference": "0cfdf959408e4c481db942b26785d94b9fe46672"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ryakad/pandoc-php/zipball/0cfdf959408e4c481db942b26785d94b9fe46672",
+                "reference": "0cfdf959408e4c481db942b26785d94b9fe46672",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Pandoc": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "time": "2015-01-07 05:07:16"
+        },
+        {
             "name": "symfony/event-dispatcher",
             "version": "v2.6.6",
             "target-dir": "Symfony/Component/EventDispatcher",
@@ -479,12 +505,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/websharks/core.git",
-                "reference": "ceaf55c60b0b02d42369c9dd682b23d12383de0d"
+                "reference": "ba0211493ece38d318e5fdf015293bc6e80371ef"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/websharks/core/zipball/ceaf55c60b0b02d42369c9dd682b23d12383de0d",
-                "reference": "ceaf55c60b0b02d42369c9dd682b23d12383de0d",
+                "url": "https://api.github.com/repos/websharks/core/zipball/ba0211493ece38d318e5fdf015293bc6e80371ef",
+                "reference": "ba0211493ece38d318e5fdf015293bc6e80371ef",
                 "shasum": ""
             },
             "require": {
@@ -497,6 +523,7 @@
                 "lusitanian/oauth": "0.*",
                 "michelf/php-markdown": "1.*",
                 "php": ">=5.4.7",
+                "ryakad/pandoc-php": "1.*",
                 "symfony/yaml": "2.*"
             },
             "type": "library",
@@ -533,7 +560,7 @@
             "keywords": [
                 "websharks"
             ],
-            "time": "2015-05-02 13:28:20"
+            "time": "2015-05-04 11:56:55"
         }
     ],
     "packages-dev": [],

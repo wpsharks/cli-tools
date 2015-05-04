@@ -6,7 +6,8 @@
  */
 namespace WebSharks\CliTools;
 
-require_once dirname(__FILE__).'/vendor/autoload.php';
+require_once dirname(dirname(__FILE__)).'/vendor/autoload.php';
 
 const GLOBAL_NS      = 'ws';
 $GLOBALS[GLOBAL_NS]  = null;
+$GLOBALS[GLOBAL_NS]  = new Ws();
