@@ -16,10 +16,9 @@ class Done extends \WebSharks\CliTools\Command
                 'message:',
             ]
         );
-        var_dump($this->opts);
     }
 
-    protected function _entry($entry, $type = 'done')
+    protected function entry($entry, $type = 'done')
     {
         if (!($entry = trim((string) $entry))) {
             return ''; // Not possible.

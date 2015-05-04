@@ -505,12 +505,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/websharks/core.git",
-                "reference": "ba0211493ece38d318e5fdf015293bc6e80371ef"
+                "reference": "f0df178e993ec64ad82b8a35cf9558459419bc8a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/websharks/core/zipball/ba0211493ece38d318e5fdf015293bc6e80371ef",
-                "reference": "ba0211493ece38d318e5fdf015293bc6e80371ef",
+                "url": "https://api.github.com/repos/websharks/core/zipball/f0df178e993ec64ad82b8a35cf9558459419bc8a",
+                "reference": "f0df178e993ec64ad82b8a35cf9558459419bc8a",
                 "shasum": ""
             },
             "require": {
@@ -560,7 +560,7 @@
             "keywords": [
                 "websharks"
             ],
-            "time": "2015-05-04 11:56:55"
+            "time": "2015-05-04 17:48:55"
         }
     ],
     "packages-dev": [],

@@ -9,6 +9,11 @@ namespace WebSharks\CliTools;
 class Command extends AbsBase
 {
     /**
+     * @type Config Opts.
+     */
+    protected $config;
+
+    /**
      * @type \stdClass Opts.
      */
     protected $opts;
@@ -25,7 +30,8 @@ class Command extends AbsBase
     {
         parent::__construct();
 
-        $this->opts = $this->getOpts($short, $long);
+        $this->config = new Config();
+        $this->opts   = $this->getOpts($short, $long);
     }
 
     /**

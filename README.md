@@ -31,19 +31,19 @@ $ brew install websharks-cli-tools
     "config": {
         "user": {
             "name": "jaswsinc",
-            "projectsDir": "~/projects"
+            "projects_dir": "~/projects"
         },
         "github": {
             "username": "jaswsinc",
-            "apiKey": "xxxxxxxxxxxxxxxxxxxxxx"
+            "api_key": "xxxxxxxxxxxxxxxxxxxxxx"
         },
         "slack": {
             "username": "jaswsinc",
-            "apiKey": "xxxxxxxxxxxxxxxxxxxxxx"
+            "api_key": "xxxxxxxxxxxxxxxxxxxxxx"
         },
         "idonethis": {
             "username": "jaswsinc",
-            "apiKey": "xxxxxxxxxxxxxxxxxxxxxx"
+            "api_key": "xxxxxxxxxxxxxxxxxxxxxx"
         }
     }
 }
