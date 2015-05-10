@@ -10,6 +10,9 @@ use WebSharks\Core\CliTools\Traits;
  */
 class Ws extends AbsBase
 {
+    use Traits\CliColorUtils;
+    use Traits\CliExceptionUtils;
+    use Traits\CliStreamUtils;
     use Traits\TrimUtils;
 
     /**
@@ -28,6 +31,8 @@ class Ws extends AbsBase
     {
         parent::__construct();
 
+        $this->cliExceptionsHandle();
+
         $this->command = (object) [
             'slug'       => '',
             'class'      => '',
@@ -44,8 +49,8 @@ class Ws extends AbsBase
         if (class_exists($command = $this->command->class_path)) {
             new $command(); // Delegate.
         } else {
-            echo 'Unknown command.';
-            exit(1);
+            throw new \Exception('Unknown command: `'.$this->command->slug.'`');
+            exit(1); // Error exit status.
         }
     }
 
