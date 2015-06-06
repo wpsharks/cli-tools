@@ -1,43 +1,45 @@
 {
-    "name": "websharks/cli-tools",
-    "homepage": "https://github.com/websharks/cli-tools",
-    "description": "Scripts that power command-line tools used by WebSharks, Inc.",
-    "keywords": ["websharks"],
-    "type": "library",
-    "license": "GPL-3.0+",
-    "authors": [{
-        "name": "websharks",
-        "homepage": "http://websharks-inc.com/",
-        "role": "company"
-    }, {
-        "name": "jaswsinc",
-        "homepage": "http://jaswsinc.com/",
-        "role": "developer"
-    }, {
-        "name": "raamdev",
-        "homepage": "http://raam.org/",
-        "role": "developer"
-    }],
-    "support": {
-        "source": "https://github.com/websharks/cli-tools",
-        "issues": "https://github.com/websharks/cli-tools/issues"
-    },
+  "name": "websharks/cli-tools",
+  "homepage": "https://github.com/websharks/cli-tools",
+  "description": "Scripts that power command-line tools used by WebSharks, Inc.",
+  "keywords": ["websharks"],
+  "type": "library",
+  "license": "GPL-3.0+",
+  "authors": [{
+    "name": "websharks",
+    "homepage": "http://websharks-inc.com/",
+    "role": "company"
+  }, {
+    "name": "jaswsinc",
+    "homepage": "http://jaswsinc.com/",
+    "role": "developer"
+  }, {
+    "name": "raamdev",
+    "homepage": "http://raam.org/",
+    "role": "developer"
+  }],
+  "support": {
+    "source": "https://github.com/websharks/cli-tools",
+    "issues": "https://github.com/websharks/cli-tools/issues"
+  },
 
-    "require": {
-        "websharks/core": "dev-000000-dev"
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true,
+  "require": {
+    "php": ">=5.5",
+    "websharks/core": "dev-master",
+    "corneltek/getoptionkit": "2.*"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
 
-    "autoload": {
-        "psr-4": {
-            "WebSharks\\CliTools\\": "src/includes/classes/"
-        }
-    },
+  "autoload": {
+    "psr-4": {
+      "WebSharks\\CliTools\\": "src/includes/classes/"
+    }
+  },
 
-    "config": {
-        "vendor-dir": "src/vendor"
-    },
+  "config": {
+    "vendor-dir": "src/vendor"
+  },
 
-    "bin": ["bin/ws"]
+  "bin": ["bin/ws"]
 }

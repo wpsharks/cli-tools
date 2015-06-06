@@ -1,24 +1,35 @@
 <?php
 namespace WebSharks\CliTools;
 
-use WebSharks\Core\CliTools\Traits;
+use WebSharks\Core\CliTools\Classes as CoreClasses;
 
 /**
- * Command.
+ * Config object.
  *
  * @since 15xxxx Initial release.
  */
-class Config extends AbsBase
+class Config extends CoreClasses\AbsBase
 {
-    use Traits\OverloadMembers;
-    use Traits\VarTypeUtils;
+    protected $VarType;
 
     /**
-     * Config file data.
+     * @type string Home directory.
      *
      * @since 15xxxx Initial release.
+     */
+    protected $home;
+
+    /**
+     * @type string File path.
      *
+     * @since 15xxxx Initial release.
+     */
+    protected $file;
+
+    /**
      * @type \stdClass Config. data.
+     *
+     * @since 15xxxx Initial release.
      */
     protected $json;
 
@@ -27,22 +38,25 @@ class Config extends AbsBase
      *
      * @since 15xxxx Initial release.
      */
-    public function __construct()
-    {
+    public function __construct(
+        CoreClasses\VarType $VarType
+    ) {
         parent::__construct();
 
+        $this->VarType = $VarType;
+
         if (!empty($_SERVER['HOME'])) {
-            $this->overload['home'] = (string) $_SERVER['HOME'];
+            $this->home = (string) $_SERVER['HOME'];
         } elseif (!empty($_SERVER['WEBSHARK_HOME'])) {
-            $this->overload['home'] = (string) $_SERVER['WEBSHARK_HOME'];
+            $this->home = (string) $_SERVER['WEBSHARK_HOME'];
         }
-        if (empty($this->overload['home'])) {
+        if (empty($this->home)) {
             throw new \Exception(
                 'Env. variables `HOME` and `WEBSHARK_HOME` are both missing.'.
                 ' Must have one or the other. Please edit your ~/.profile'
             );
         }
-        $this->overload['file'] = $this->home.'/.websharks.json';
+        $this->file = $this->home.'/.websharks.json';
 
         if (!is_file($this->file)) {
             throw new \Exception(
@@ -69,11 +83,13 @@ class Config extends AbsBase
                 '`'.$this->file.'` is missing required value `config->user->projects_dir`. See: <http://bit.ly/1zt2n32>'
             );
         }
-        $this->json->config                     = $this->varTypify($this->json->config, 'string');
+        $this->json->config                     = $this->VarType->ify($this->json->config, 'string');
         $this->json->config->user->projects_dir = str_replace('~', $this->home, $this->json->config->user->projects_dir);
 
+        $this->overload(['home', 'file']); // Setup overloaded properties.
+
         foreach ($this->json->config as $_property => $_value) {
-            $this->overload[$_property] = $_value;
+            $this->overload->{$_property} = &$_value;
         }
         unset($_property, $_value); // Housekeeping.
     }

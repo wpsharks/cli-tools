@@ -1,101 +1,65 @@
 <?php
 namespace WebSharks\CliTools;
 
-use WebSharks\Core\CliTools\Traits;
+use WebSharks\Core\CliTools\Classes as CoreClasses;
 
 /**
- * Delegation handler.
+ * CLI primary.
  *
  * @since 15xxxx Initial release.
  */
-class Ws extends AbsBase
+class Ws extends CoreClasses\AbsCliCmdBase
 {
-    use Traits\CliColorUtils;
-    use Traits\CliExceptionUtils;
-    use Traits\CliStreamUtils;
-    use Traits\TrimUtils;
-
     /**
-     * @type \stdClass Command.
+     * Version string.
      *
      * @since 15xxxx Initial release.
-     */
-    public $command;
-
-    /**
-     * Constructor.
      *
-     * @since 15xxxx Initial release.
+     * @return string Version.
      */
-    public function __construct()
+    protected function version()
     {
-        parent::__construct();
-
-        $this->cliExceptionsHandle();
-
-        $this->command = (object) [
-            'slug'       => '',
-            'class'      => '',
-            'class_path' => '',
-        ];
-        if (!empty($GLOBALS['argv'][1])) {
-            $this->command->slug       = (string) $GLOBALS['argv'][1];
-            $this->command->slug       = strtolower($this->command->slug);
-            $this->command->slug       = preg_replace('/[^a-z0-9]+/', '-', $this->command->slug);
-            $this->command->slug       = $this->trim($this->command->slug, '', '-');
-            $this->command->class      = $this->commandClass($this->command->slug);
-            $this->command->class_path = $this->commandClassPath($this->command->slug);
-        }
-        if (class_exists($command = $this->command->class_path)) {
-            new $command(); // Delegate.
-        } else {
-            throw new \Exception('Unknown command: `'.$this->command->slug.'`');
-            exit(1); // Error exit status.
-        }
+        return VERSION;
     }
 
     /**
-     * Class slug from path.
+     * Initialize config. values.
      *
      * @since 15xxxx Initial release.
      */
-    public function commandSlug($class)
+    protected function initConfig()
     {
-        $class = (string) $class;
-        $class = basename(str_replace('\\', '/', $class));
-
-        $slug  = preg_replace('/([A-Z])/', '-${1}', $class);
-        $slug  = $this->trim(strtolower($slug), '', '-');
-        $slug  = preg_replace('/[^a-z0-9]+/', '-', $slug);
-
-        return $slug;
+        $this->config = $this->Dicer->get(Config::class);
     }
 
     /**
-     * Class path from slug.
+     * Available sub-commands.
      *
      * @since 15xxxx Initial release.
+     *
+     * @return array Available sub-commands.
      */
-    public function commandClass($slug)
+    protected function subCommandAliases()
     {
-        $slug  = (string) $slug;
-        $parts = preg_split('/\-/', $slug, null, PREG_SPLIT_NO_EMPTY);
-        $parts = array_map('ucfirst', array_map('strtolower', $parts));
-        $class = implode('', $parts); // e.g., CommandClass
-
-        return $class;
+        return [
+            'todo' => 'done',
+        ]; // All aliases.
     }
 
     /**
-     * Class path from slug.
+     * Available sub-commands.
      *
      * @since 15xxxx Initial release.
+     *
+     * @return array Available sub-commands.
      */
-    public function commandClassPath($slug)
+    protected function availableSubCommands()
     {
-        $slug  = (string) $slug;
-        $class = $this->commandClass($slug);
-
-        return $class ? __NAMESPACE__.'\\Commands\\'.$class : '';
+        return [
+            'todo'    => 'iDoneThis entry submission.',
+            'done'    => 'iDoneThis entry submission.',
+            'shorten' => 'URL shortener via wsharks.com.',
+            'i2kba'   => 'GitHub issue to KB article converter.',
+        ]; // All sub-commands.
     }
 }
