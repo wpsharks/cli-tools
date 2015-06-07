@@ -93,7 +93,7 @@ class Done extends AbsBase
 
         $help .= '**- SYNOPSIS -**'."\n\n";
         $help .= '$ `'.$ws.' '.$sc.' [options] [entry]`'."\n";
-        $help .= 'Post '.$td.' entries w/ the iDoneThis API.'."\n\n";
+        $help .= 'Post '.$sc.' entries w/ the iDoneThis API.'."\n\n";
 
         $help .= '**- BASIC USAGE EXAMPLE -**'."\n\n";
         $help .= '$ `'.$ws.' '.$sc.' \'Message entry here.\'`'."\n\n";
