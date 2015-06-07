@@ -26,6 +26,10 @@ $ brew install websharks-cli-tools
 
 ### Depends On `~/.websharks.json`
 
+Please create this config. file and fill in your username and API keys.
+
+_**Note:** Not all team members will have access to all of these credentials. For instance, a `websharks->api_key` is available to Jason/Raam only, and is required for access to special sub-commands (e.g., `$ ws sales`). Please fill in what you do have, and don't worry too much. If you forget something vital the CLI Tools will let you know that a specific config. option is required to complete the requested action—this may happen whenever you try to run a particular sub-command._
+
 ```json
 {
     "config": {
@@ -52,3 +56,37 @@ $ brew install websharks-cli-tools
     }
 }
 ```
+
+---
+
+## Getting Started w/ CLI Tools
+
+Type the following for a list of all available sub-commands:
+
+```shell
+$ ws --help
+```
+
+![2015-06-06_21-51-04](https://cloud.githubusercontent.com/assets/1563559/8022785/2993e470-0c96-11e5-89d0-67c8834f07a7.png)
+
+---
+
+## Getting Help For A Specific Sub-Command
+
+```shell
+$ ws [sub-command] --help
+```
+
+Example: `$ ws done --help` will give you instructions for the `done` sub-command.
+
+![2015-06-06_21-52-14](https://cloud.githubusercontent.com/assets/1563559/8022792/530cc222-0c96-11e5-84df-f6dd878d65ec.png)
+
+---
+
+## Staying Up-To-Date
+
+```shell
+$ brew update --all && brew upgrade --all;
+```
+
+_This will update all of your Homebrew formulas; including the `websharks-cli-tools`._
