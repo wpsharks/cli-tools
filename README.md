@@ -44,6 +44,10 @@ $ brew install websharks-cli-tools
         "idonethis": {
             "username": "jaswsinc",
             "api_key": "xxxxxxxxxxxxxxxxxxxxxx"
+        },
+        "websharks": {
+          "username": "jaswsinc",
+          "api_key": "xxxxxxxxxxxxxxxxxxxxxx"
         }
     }
 }

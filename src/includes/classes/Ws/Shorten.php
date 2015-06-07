@@ -16,6 +16,13 @@ class Shorten extends AbsBase
     protected $long_url = '';
 
     /**
+     * @type bool Open?
+     *
+     * @since 15xxxx Initial release.
+     */
+    protected $open = false;
+
+    /**
      * Option specs.
      *
      * @since 15xxxx Initial release.
@@ -24,7 +31,11 @@ class Shorten extends AbsBase
      */
     protected function optSpecs()
     {
-        return [];
+        return [
+            'o|open' => [
+                'desc' => 'Flag opens the response URL; i.e., navigate to shortlink?',
+            ],
+        ];
     }
 
     /**
@@ -76,7 +87,14 @@ class Shorten extends AbsBase
                 'Input URL required.'
             );
         }
-        $this->CliStream->out($this->shorten());
+        $this->open = $this->opts->open;
+
+        $url = $this->shorten();
+
+        if ($this->open) {
+            $this->CliUrl->open($url);
+        }
+        $this->CliStream->out('<'.$url.'>');
 
         exit(0); // All done here.
     }
@@ -99,9 +117,9 @@ class Shorten extends AbsBase
         if (!$short_url) {
             throw new \Exception(
                 'Unable to shorten <'.$this->long_url.'>'."\n".
-                'The API call failed; possible connection timeout.'
+                'The API call failed w/ an unknown error.'
             );
         }
-        return '<'.$short_url.'>';
+        return ($url = $short_url);
     }
 }

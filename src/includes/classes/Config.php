@@ -88,7 +88,7 @@ class Config extends CoreClasses\AbsBase
 
         $this->overload(['home', 'file']); // Setup overloaded properties.
 
-        foreach ($this->json->config as $_property => $_value) {
+        foreach ($this->json->config as $_property => &$_value) {
             $this->overload->{$_property} = &$_value;
         }
         unset($_property, $_value); // Housekeeping.

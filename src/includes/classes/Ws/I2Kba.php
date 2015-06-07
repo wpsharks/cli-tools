@@ -23,6 +23,13 @@ class I2Kba extends AbsBase
     protected $branch = '';
 
     /**
+     * @type bool Open?
+     *
+     * @since 15xxxx Initial release.
+     */
+    protected $open = false;
+
+    /**
      * Option specs.
      *
      * @since 15xxxx Initial release.
@@ -36,6 +43,9 @@ class I2Kba extends AbsBase
                 'type'    => 'string',
                 'default' => 'master',
                 'desc'    => 'Branch; defaults to `master`.',
+            ],
+            'o|open' => [
+                'desc' => 'Flags open response URL; i.e., navigate to URL?',
             ],
         ];
     }
@@ -98,13 +108,20 @@ class I2Kba extends AbsBase
                 'Branch required.'
             );
         }
+        $this->open = $this->opts->open;
+
         if (empty($this->config->github->api_key)) {
             throw new \Exception(
                 '`'.$this->config->file.'` is missing `github->api_key`.'.
                 ' Please see: <http://bit.ly/1zt2n32>'
             );
         }
-        $this->CliStream->out($this->convert());
+        $url = $this->convert();
+
+        if ($this->open) {
+            $this->CliUrl->open($url);
+        }
+        $this->CliStream->out('<'.$url.'>');
 
         exit(0); // All done here.
     }
@@ -129,9 +146,9 @@ class I2Kba extends AbsBase
         if (!$response || !preg_match('/^https?\:\/\//i', $response)) {
             throw new \Exception(
                 'Unable to convert `'.$this->issue.'`'."\n".
-                'The API said: '.$response
+                'The API said: `'.$response.'`'
             );
         }
-        return '<'.$response.'>';
+        return ($url = $response);
     }
 }

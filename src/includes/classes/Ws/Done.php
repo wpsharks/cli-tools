@@ -16,11 +16,25 @@ class Done extends AbsBase
     protected $entry = '';
 
     /**
+     * @type string Team.
+     *
+     * @since 15xxxx Initial release.
+     */
+    protected $team = '';
+
+    /**
      * @type string Entry type.
      *
      * @since 15xxxx Initial release.
      */
     protected $type = 'done';
+
+    /**
+     * @type bool Open?
+     *
+     * @since 15xxxx Initial release.
+     */
+    protected $open = false;
 
     /**
      * Initialize/config.
@@ -46,12 +60,20 @@ class Done extends AbsBase
     protected function optSpecs()
     {
         return [
-            'oneline' => [
+            't|team:' => [
+                'type'    => 'string',
+                'default' => 'websharks',
+                'desc'    => 'iDoneThis team to post in.',
+            ],
+            'l|oneline' => [
                 'desc' => 'Ask for one line of STDIN instead of reading [entry] arg.',
             ],
-            'multiline' => [
+            'm|multiline' => [
                 'desc' => 'Ask for STDIN instead of reading [entry] arg. Accepts multiple lines.'.
                           ' Press `Ctrl-D` to close STDIN; i.e., to finish and submit entry.',
+            ],
+            'o|open' => [
+                'desc' => 'Flag opens the response URL; i.e., navigate to the entry?',
             ],
         ];
     }
@@ -111,6 +133,9 @@ class Done extends AbsBase
                 'Message [entry] required.'
             );
         }
+        $this->team = $this->opts->team;
+        $this->open = $this->opts->open;
+
         if (empty($this->config->idonethis->username)) {
             throw new \Exception(
                 '`'.$this->config->file.'` is missing `idonethis->username`.'.
@@ -129,7 +154,12 @@ class Done extends AbsBase
         if ($this->type === 'todo' && stripos($this->entry, '#'.$this->config->idonethis->username) === false) {
             $this->entry .= ' #'.$this->config->idonethis->username;
         }
-        $this->CliStream->out($this->submitEntry());
+        $url = $this->submitEntry();
+
+        if ($this->open) {
+            $this->CliUrl->open($url);
+        }
+        $this->CliStream->out('<'.$url.'>');
 
         exit(0); // All done here.
     }
@@ -147,25 +177,25 @@ class Done extends AbsBase
             'Accept: application/json',
         ];
         $body = json_encode([
-            'team'      => 'websharks',
+            'team'      => $this->team,
             'raw_text'  => $this->entry,
             'meta_data' => json_encode(['via' => __CLASS__]),
         ]);
         $endpoint = 'https://idonethis.com/api/v0.1/dones/';
-        $response = json_decode($this->UrlRemote->request('POST::'.$endpoint, compact('body', 'headers')));
-        $r        = &$response; // Shorter reference.
+        $response = json_decode($this->UrlRemote->request('POST::'.$endpoint, compact('headers', 'body')));
 
-        if (!is_object($r) || empty($r->ok) || empty($r->result->permalink)) {
-            if (!empty($r->detail)) {
-                $error = (string) $r->detail;
-            } else {
-                $error = 'Unknown error; possible connection failure.';
+        if (!is_object($response) || empty($response->ok) || empty($response->result->permalink)) {
+            if (!empty($response->detail)) {
+                throw new \Exception(
+                    'Unable to add '.strtoupper($this->type).' entry.'."\n".
+                    'The iDoneThis API said: `'.$response->detail.'`'
+                );
             }
             throw new \Exception(
                 'Unable to add '.strtoupper($this->type).' entry.'."\n".
-                'The iDoneThis API said: `'.rtrim($error, '.').'`.'
+                'The iDoneThis API call failed w/ an unknown error.'
             );
         }
-        return '<'.$r->result->permalink.'>';
+        return ($url = $response->result->permalink);
     }
 }

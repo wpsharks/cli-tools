@@ -58,6 +58,7 @@ class Ws extends CoreClasses\AbsCliCmdBase
         return [
             'todo'    => 'iDoneThis entry submission.',
             'done'    => 'iDoneThis entry submission.',
+            'sales'   => 'Retrieve revenue statistics.',
             'shorten' => 'URL shortener via wsharks.com.',
             'i2kba'   => 'GitHub issue to KB article converter.',
         ]; // All sub-commands.

@@ -26,7 +26,9 @@
   "require": {
     "php": ">=5.5",
     "websharks/core": "dev-master",
-    "corneltek/getoptionkit": "2.*"
+    "corneltek/getoptionkit": "2.*",
+    "pear/console_table": "1.*",
+    "pear/console_color2": "0.*"
   },
   "minimum-stability": "dev",
   "prefer-stable": true,

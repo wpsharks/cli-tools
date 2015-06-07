@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "fdf698aceb3fbaf4067e7a6a9c94f865",
+    "hash": "422ac19141588347328bbb6face3f480",
     "packages": [
         {
             "name": "corneltek/getoptionkit",
@@ -49,17 +49,121 @@
             "time": "2015-06-04 05:55:50"
         },
         {
+            "name": "pear/console_color2",
+            "version": "0.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pear/Console_Color2.git",
+                "reference": "cab2b886aa55cc9e23464d1f49edf97bee9f5a63"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pear/Console_Color2/zipball/cab2b886aa55cc9e23464d1f49edf97bee9f5a63",
+                "reference": "cab2b886aa55cc9e23464d1f49edf97bee9f5a63",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.0.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Console_Color2": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Daniel O'Connor",
+                    "email": "daniel.oconnor@gmail.com",
+                    "role": "Pear Developer"
+                },
+                {
+                    "name": "Stefan Walk",
+                    "email": "et@php.net"
+                },
+                {
+                    "name": "Scott Mattocks",
+                    "email": "scottmattocks@php.net"
+                }
+            ],
+            "description": "This Class allows you to easily use ANSI console colors in your application.",
+            "homepage": "https://github.com/pear/Console_Color2",
+            "keywords": [
+                "console"
+            ],
+            "time": "2012-10-23 11:52:18"
+        },
+        {
+            "name": "pear/console_table",
+            "version": "1.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/RobLoach/Console_Table.git",
+                "reference": "10d89fbbe533351dcfe5dc1e84de25d9a8395950"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/RobLoach/Console_Table/zipball/10d89fbbe533351dcfe5dc1e84de25d9a8395950",
+                "reference": "10d89fbbe533351dcfe5dc1e84de25d9a8395950",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=4.3.10"
+            },
+            "suggest": {
+                "pear/Console_Color2": ">=0.1.2"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "Table.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-2-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Jan Schneider",
+                    "homepage": "http://pear.php.net/user/yunosh"
+                },
+                {
+                    "name": "Tal Peer",
+                    "homepage": "http://pear.php.net/user/tal"
+                },
+                {
+                    "name": "Xavier Noguer",
+                    "homepage": "http://pear.php.net/user/xnoguer"
+                },
+                {
+                    "name": "Richard Heyes",
+                    "homepage": "http://pear.php.net/user/richard"
+                }
+            ],
+            "description": "Library that makes it easy to build console style tables.",
+            "homepage": "http://pear.php.net/package/Console_Table/",
+            "keywords": [
+                "console"
+            ],
+            "time": "2014-10-27 10:04:49"
+        },
+        {
             "name": "websharks/core",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/websharks/core.git",
-                "reference": "88105cbeb0be1a82cf3abb708e96493c251fee22"
+                "reference": "2a7278185b61dc9378d30b54c385a94fe8698e93"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/websharks/core/zipball/88105cbeb0be1a82cf3abb708e96493c251fee22",
-                "reference": "88105cbeb0be1a82cf3abb708e96493c251fee22",
+                "url": "https://api.github.com/repos/websharks/core/zipball/2a7278185b61dc9378d30b54c385a94fe8698e93",
+                "reference": "2a7278185b61dc9378d30b54c385a94fe8698e93",
                 "shasum": ""
             },
             "require": {
@@ -123,7 +227,7 @@
             "keywords": [
                 "websharks"
             ],
-            "time": "2015-06-06 01:56:50"
+            "time": "2015-06-07 01:31:20"
         },
         {
             "name": "websharks/dicer",
