@@ -6,7 +6,7 @@ namespace WebSharks\CliTools\Ws;
  *
  * @since 15xxxx Initial release.
  */
-class I2Kba extends AbsBase
+class I2kba extends AbsBase
 {
     /**
      * @type string Issue.
