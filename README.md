@@ -52,38 +52,3 @@ $ brew install websharks-cli-tools
     }
 }
 ```
-
----
-
-### Contributing (How-To)
-
-#### Clone the `cli-tools` repo locally.
-
-```bash
-$ git clone https://github.com/websharks/cli-tools
-$ cd cli-tools
-$ git checkout 000000-dev
-```
-
-#### Build and satisfy all dependencies.
-
-```bash
-$ cd cli-tools
-$ phing # This runs Composer too, automatically.
-```
-
-#### Add a new `scripts/[file.(php|bash|etc)]`
-
-##### If your script has dependencies, add them to `composer.json`.
-
-_Or, you can use a Homebrew package as a dependency; if that is easier._
-
-_If you need configuration data, please obtain those values from `~/.websharks.json`. Your script should trigger an exception if configuration options are missing; i.e., you should alert the user instead of trying to fail gracefully._
-
-#### Submit a Pull Request on GitHub
-
-Submit a Pull Request so that your script can get merged into this repo. Raam/Jason will review.
-
- - In your PR, please be sure to include a list of any Homebrew packages that your script requires. Those will need to be added to our [Homebrew Formula for these CLI Tools](https://github.com/websharks/homebrew-formulas/blob/master/websharks-cli-tools.rb).
-
- - If your script requires configuration options; i.e., data from `~/.websharks.json`, please include the config. keys needed to use the script effectively. We will need to update the README file so it mentions that new configuration option.
