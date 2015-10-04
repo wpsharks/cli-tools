@@ -1,0 +1,297 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "8825a828525c47fa8fc26c6ecb8a0b56",
+    "content-hash": "8c3f5adc07c9e75d59e66c859c5017a0",
+    "packages": [
+        {
+            "name": "corneltek/getoptionkit",
+            "version": "2.2.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/c9s/GetOptionKit.git",
+                "reference": "c7170525314b587019c0b2a7b0354432b64b48e0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/c9s/GetOptionKit/zipball/c7170525314b587019c0b2a7b0354432b64b48e0",
+                "reference": "c7170525314b587019c0b2a7b0354432b64b48e0",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "corneltek/phpunit-testmore": "dev-master",
+                "satooshi/php-coveralls": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "GetOptionKit\\": "src/GetOptionKit/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Yo-An Lin",
+                    "email": "cornelius.howl@gmail.com",
+                    "homepage": "http://c9s.me"
+                }
+            ],
+            "description": "Powerful command-line option toolkit",
+            "homepage": "http://github.com/c9s/GetOptionKit",
+            "time": "2015-10-02 07:53:43"
+        },
+        {
+            "name": "pear/console_color2",
+            "version": "0.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pear/Console_Color2.git",
+                "reference": "cab2b886aa55cc9e23464d1f49edf97bee9f5a63"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pear/Console_Color2/zipball/cab2b886aa55cc9e23464d1f49edf97bee9f5a63",
+                "reference": "cab2b886aa55cc9e23464d1f49edf97bee9f5a63",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.0.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Console_Color2": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Daniel O'Connor",
+                    "email": "daniel.oconnor@gmail.com",
+                    "role": "Pear Developer"
+                },
+                {
+                    "name": "Stefan Walk",
+                    "email": "et@php.net"
+                },
+                {
+                    "name": "Scott Mattocks",
+                    "email": "scottmattocks@php.net"
+                }
+            ],
+            "description": "This Class allows you to easily use ANSI console colors in your application.",
+            "homepage": "https://github.com/pear/Console_Color2",
+            "keywords": [
+                "console"
+            ],
+            "time": "2012-10-23 11:52:18"
+        },
+        {
+            "name": "pear/console_table",
+            "version": "1.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/RobLoach/Console_Table.git",
+                "reference": "10d89fbbe533351dcfe5dc1e84de25d9a8395950"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/RobLoach/Console_Table/zipball/10d89fbbe533351dcfe5dc1e84de25d9a8395950",
+                "reference": "10d89fbbe533351dcfe5dc1e84de25d9a8395950",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=4.3.10"
+            },
+            "suggest": {
+                "pear/Console_Color2": ">=0.1.2"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "Table.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-2-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Jan Schneider",
+                    "homepage": "http://pear.php.net/user/yunosh"
+                },
+                {
+                    "name": "Tal Peer",
+                    "homepage": "http://pear.php.net/user/tal"
+                },
+                {
+                    "name": "Xavier Noguer",
+                    "homepage": "http://pear.php.net/user/xnoguer"
+                },
+                {
+                    "name": "Richard Heyes",
+                    "homepage": "http://pear.php.net/user/richard"
+                }
+            ],
+            "description": "Library that makes it easy to build console style tables.",
+            "homepage": "http://pear.php.net/package/Console_Table/",
+            "keywords": [
+                "console"
+            ],
+            "time": "2014-10-27 10:04:49"
+        },
+        {
+            "name": "websharks/core",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/websharks/core.git",
+                "reference": "0566ec830d1e168a9dc22973e4c5e02eaa5bee55"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/websharks/core/zipball/0566ec830d1e168a9dc22973e4c5e02eaa5bee55",
+                "reference": "0566ec830d1e168a9dc22973e4c5e02eaa5bee55",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-mbstring": "*",
+                "ext-openssl": "*",
+                "php": ">=7.0-RC3",
+                "websharks/dicer": "151004"
+            },
+            "require-dev": {
+                "aws/aws-sdk-php": "2.*",
+                "corneltek/getoptionkit": "2.*",
+                "erusev/parsedown": "1.*",
+                "erusev/parsedown-extra": "0.*",
+                "lusitanian/oauth": "0.*",
+                "michelf/php-markdown": "1.*",
+                "ryakad/pandoc-php": "1.*",
+                "symfony/yaml": "2.*"
+            },
+            "suggest": {
+                "aws/aws-sdk-php": "2.* :: Required by routines that make calls to the AWS API.",
+                "corneltek/getoptionkit": "2.* :: Required for routines that parse CLI opts.",
+                "erusev/parsedown": "1.* :: Required by routines that convert Markdown.",
+                "erusev/parsedown-extra": "0.* :: Required by routines that convert Markdown.",
+                "lusitanian/oauth": "0.* :: Required by routines that deal w/ oAuth.",
+                "michelf/php-markdown": "1.* :: Required by routines that convert Markdown.",
+                "ryakad/pandoc-php": "1.* :: Required by routines that use Pandoc.",
+                "symfony/yaml": "2.* :: Required by routines that convert YAML."
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "WebSharks\\Core\\Classes\\": "src/includes/classes",
+                    "WebSharks\\Core\\Interfaces\\": "src/includes/interfaces",
+                    "WebSharks\\Core\\Traits\\": "src/includes/traits"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0+"
+            ],
+            "authors": [
+                {
+                    "name": "websharks",
+                    "homepage": "http://websharks-inc.com/",
+                    "role": "company"
+                },
+                {
+                    "name": "jaswsinc",
+                    "homepage": "http://jaswsinc.com/",
+                    "role": "developer"
+                },
+                {
+                    "name": "raamdev",
+                    "homepage": "http://raam.org/",
+                    "role": "developer"
+                }
+            ],
+            "description": "Core PHP library used by WebSharks, Inc.",
+            "homepage": "https://github.com/websharks/core",
+            "keywords": [
+                "websharks"
+            ],
+            "time": "2015-10-04 08:58:59"
+        },
+        {
+            "name": "websharks/dicer",
+            "version": "151004",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/websharks/dicer.git",
+                "reference": "d12af7b40a997316845512e704fb6ebddc7bfab9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/websharks/dicer/zipball/d12af7b40a997316845512e704fb6ebddc7bfab9",
+                "reference": "d12af7b40a997316845512e704fb6ebddc7bfab9",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0-RC3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "WebSharks\\Dicer\\": "src/includes/classes"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-2-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "websharks",
+                    "homepage": "http://websharks-inc.com/",
+                    "role": "company"
+                },
+                {
+                    "name": "jaswsinc",
+                    "homepage": "http://jaswsinc.com/",
+                    "role": "developer"
+                },
+                {
+                    "name": "raamdev",
+                    "homepage": "http://raam.org/",
+                    "role": "developer"
+                }
+            ],
+            "description": "Dependency injector for PHP.",
+            "homepage": "https://github.com/websharks/dicer",
+            "keywords": [
+                "websharks"
+            ],
+            "time": "2015-10-04 08:40:37"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "websharks/core": 20
+    },
+    "prefer-stable": true,
+    "prefer-lowest": false,
+    "platform": {
+        "php": ">=7.0-RC3"
+    },
+    "platform-dev": []
+}
