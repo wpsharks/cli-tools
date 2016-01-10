@@ -56,8 +56,10 @@ class Config extends CoreClasses\AbsBase
                 ' Must have one or the other. Please edit your ~/.profile'
             );
         }
-        $this->file = $this->home.'/.websharks.json';
-
+        $this->file = $this->home.'/.ws.json';
+        if (!is_file($this->file)) {
+            $this->file = $this->home.'/.websharks.json';
+        }
         if (!is_file($this->file)) {
             throw new \Exception(
                 '`'.$this->file.'` is missing. See: <http://bit.ly/1zt2n32>'
@@ -67,6 +69,9 @@ class Config extends CoreClasses\AbsBase
             throw new \Exception(
                 '`'.$this->file.'` is corrupt. See: <http://bit.ly/1zt2n32>'
             );
+        }
+        if (!empty($this->json->cli_tools)) {
+            $this->json->config = $this->json->cli_tools;
         }
         if (empty($this->json->config) || !is_object($this->json->config)) {
             throw new \Exception(

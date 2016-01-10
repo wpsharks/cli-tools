@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "8825a828525c47fa8fc26c6ecb8a0b56",
-    "content-hash": "8c3f5adc07c9e75d59e66c859c5017a0",
+    "hash": "7c8481ae6d7197b8aa8e52dd12dc72fb",
+    "content-hash": "00b53837632f6028be2ca6cf79a68fd6",
     "packages": [
         {
             "name": "corneltek/getoptionkit",
@@ -155,24 +155,24 @@
         },
         {
             "name": "websharks/core",
-            "version": "dev-master",
+            "version": "dev-original",
             "source": {
                 "type": "git",
                 "url": "https://github.com/websharks/core.git",
-                "reference": "0566ec830d1e168a9dc22973e4c5e02eaa5bee55"
+                "reference": "f6e18eb5062e887cf40924b3af44b83eaf8f4fe9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/websharks/core/zipball/0566ec830d1e168a9dc22973e4c5e02eaa5bee55",
-                "reference": "0566ec830d1e168a9dc22973e4c5e02eaa5bee55",
+                "url": "https://api.github.com/repos/websharks/core/zipball/f6e18eb5062e887cf40924b3af44b83eaf8f4fe9",
+                "reference": "f6e18eb5062e887cf40924b3af44b83eaf8f4fe9",
                 "shasum": ""
             },
             "require": {
                 "ext-curl": "*",
                 "ext-mbstring": "*",
                 "ext-openssl": "*",
-                "php": ">=7.0-RC3",
-                "websharks/dicer": "151004"
+                "php": ">=5.5",
+                "websharks/dicer": "dev-original"
             },
             "require-dev": {
                 "aws/aws-sdk-php": "2.*",
@@ -228,24 +228,24 @@
             "keywords": [
                 "websharks"
             ],
-            "time": "2015-10-04 08:58:59"
+            "time": "2016-01-10 10:03:37"
         },
         {
             "name": "websharks/dicer",
-            "version": "151004",
+            "version": "dev-original",
             "source": {
                 "type": "git",
                 "url": "https://github.com/websharks/dicer.git",
-                "reference": "d12af7b40a997316845512e704fb6ebddc7bfab9"
+                "reference": "d86b943120a046363d47fe92b8275efabf275b8a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/websharks/dicer/zipball/d12af7b40a997316845512e704fb6ebddc7bfab9",
-                "reference": "d12af7b40a997316845512e704fb6ebddc7bfab9",
+                "url": "https://api.github.com/repos/websharks/dicer/zipball/d86b943120a046363d47fe92b8275efabf275b8a",
+                "reference": "d86b943120a046363d47fe92b8275efabf275b8a",
                 "shasum": ""
             },
             "require": {
-                "php": ">=7.0-RC3"
+                "php": ">=5.5"
             },
             "type": "library",
             "autoload": {
@@ -255,7 +255,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "BSD-2-Clause"
+                "GPL-3.0+"
             ],
             "authors": [
                 {
@@ -279,7 +279,7 @@
             "keywords": [
                 "websharks"
             ],
-            "time": "2015-10-04 08:40:37"
+            "time": "2016-01-10 10:01:28"
         }
     ],
     "packages-dev": [],
@@ -291,7 +291,7 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=7.0-RC3"
+        "php": ">=5.5"
     },
     "platform-dev": []
 }
