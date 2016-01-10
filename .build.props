@@ -7,6 +7,5 @@ project_ns                   = WebSharks\\CliTools
 project_sns                  = CliTools
 
 project_version              = %y%m%d
-
-project_php_required_version = 7.0-RC3
+project_php_required_version = 7.0.1
 project_php_up_to_version    = ${php.version}

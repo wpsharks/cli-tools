@@ -24,8 +24,8 @@
   },
 
   "require": {
-    "php": ">=7.0-RC3",
-    "websharks/core": "dev-master",
+    "php": ">=5.5",
+    "websharks/core": "dev-original",
     "corneltek/getoptionkit": "2.*",
     "pear/console_table": "1.*",
     "pear/console_color2": "0.*"

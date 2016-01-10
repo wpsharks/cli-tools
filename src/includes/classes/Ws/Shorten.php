@@ -16,11 +16,25 @@ class Shorten extends AbsBase
     protected $long_url = '';
 
     /**
+     * @type string Short URL.
+     *
+     * @since 15xxxx Initial release.
+     */
+    protected $short_url = '';
+
+    /**
      * @type bool Open?
      *
      * @since 15xxxx Initial release.
      */
     protected $open = false;
+
+    /**
+     * @type bool No copy?
+     *
+     * @since 15xxxx Initial release.
+     */
+    protected $no_copy = false;
 
     /**
      * Option specs.
@@ -34,6 +48,9 @@ class Shorten extends AbsBase
         return [
             'o|open' => [
                 'desc' => 'Flag opens the response URL; i.e., navigate to shortlink?',
+            ],
+            'no-copy' => [
+                'desc' => 'Flag forces a no-copy operation; i.e., do not copy short URL to clipboard?',
             ],
         ];
     }
@@ -60,7 +77,8 @@ class Shorten extends AbsBase
 
         $help .= '**- ALTERNATE USAGE EXAMPLES -**'."\n\n";
         $help .= '$ `echo [URL] | '.$ws.' '.$sc.'` _*(i.e., pipe [URL] as STDIN)*_'."\n";
-        $help .= '$ `cat [file containing URL] | '.$ws.' '.$sc.'` _*(i.e., pipe file contents as STDIN)*_'."\n\n";
+        $help .= '$ `cat [file containing URL] | '.$ws.' '.$sc.'` _*(i.e., pipe file contents as STDIN)*_'."\n";
+        $help .= '$ `'.$ws.' '.$sc.'` _*(i.e., can detect URL in clipboard on a Mac)*_'."\n\n";
 
         $help .= '**- OPTIONS FOR THIS SUB-COMMAND -**'."\n\n";
         $help .= $this->CliOpts->specs();
@@ -81,20 +99,24 @@ class Shorten extends AbsBase
             $this->long_url = $this->stdin;
         } elseif (!empty($this->args[1])) {
             $this->long_url = $this->args[1];
-        }
+        } elseif ($this->Os->isMac() && filter_var($_pbpaste = trim(`pbpaste`), FILTER_VALIDATE_URL)) {
+            $this->long_url = $_pbpaste;
+        } // unset($_pbpaste);
+
         if (!($this->long_url = trim($this->long_url))) {
-            throw new \Exception(
-                'Input URL required.'
-            );
+            throw new \Exception('Input URL (or URL in clipboard) is required.');
         }
-        $this->open = $this->opts->open;
+        $this->open      = $this->opts->open;
+        $this->no_copy   = $this->opts->no_copy;
+        $this->short_url = $this->shorten();
 
-        $url = $this->shorten();
-
+        if ($this->Os->isMac() && !$this->no_copy) {
+            `printf '%s' '$this->short_url' | pbcopy`;
+        }
         if ($this->open) {
-            $this->CliUrl->open($url);
+            $this->CliUrl->open($this->short_url);
         }
-        $this->CliStream->out('<'.$url.'>');
+        $this->CliStream->out($this->short_url);
 
         exit(0); // All done here.
     }
@@ -120,6 +142,6 @@ class Shorten extends AbsBase
                 'The API call failed w/ an unknown error.'
             );
         }
-        return ($url = $short_url);
+        return $url = $short_url;
     }
 }

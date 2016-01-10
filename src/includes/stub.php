@@ -8,6 +8,6 @@ namespace WebSharks\CliTools;
 
 require_once dirname(dirname(__FILE__)).'/vendor/autoload.php';
 
-const VERSION = '151004'; //version//
+const VERSION = '160110'; //version//
 
 new Ws(); // New primary command instance.

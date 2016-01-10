@@ -24,7 +24,7 @@ $ brew install websharks-cli-tools
 
 ---
 
-### Depends On `~/.websharks.json`
+### Depends On `~/.websharks.json`; aka: `~/.ws.json`
 
 Please create this config. file and fill in your username and API keys.
 
@@ -32,7 +32,7 @@ _**Note:** Not all team members will have access to all of these credentials. Fo
 
 ```json
 {
-    "config": {
+    "cli_tools": {
         "user": {
             "name": "jaswsinc",
             "projects_dir": "~/projects"
@@ -56,6 +56,8 @@ _**Note:** Not all team members will have access to all of these credentials. Fo
     }
 }
 ```
+
+_**Note:** The `cli_tools` key was previously named `config`, which still works also._
 
 ---
 
